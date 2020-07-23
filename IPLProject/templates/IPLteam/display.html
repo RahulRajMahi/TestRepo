@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add IPL Team</title>
+    <link rel="stylesheet" href="{% static "css/iplcss.css" %}">
+  </head>
+  <body>
+<h1 align = "center" >IPL TEAM DETAILS</h1>
+{% if team_list %}
+  <table border="2px" align = "center" cellspacing = "8px" cellpadding = "7px">
+    <thead>
+      <th>Team Name</th>
+      <th>Team Owner</th>
+      <th>Team Home City</th>
+    </thead>
+    {% for t in team_list %}
+    <tr>
+      <td>{{t.name}}</td>
+      <td>{{t.owner}}</td>
+      <td>{{t.home_city}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+  {% else %}
+     <p>No Team Record Found!!!</p>
+    {% endif %}
+  </body>
+</html>
